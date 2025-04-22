@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Utilidades - 1º Registro de Imóveis de Barbacena/MG</title>
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+  <div class="container-wrapper">
+
+    <!-- Container conversor de áreas-->
+    <div class="container">
+      <h1>Conversor de Áreas</h1>
+
+      <label for="area-valor">Informe o valor da área de origem</label>
+      <input type="number" id="area-valor" placeholder="Exemplo: 50" oninput="converterArea()">
+
+      <label for="origem">Selecione a unidade de origem:</label>
+      <select id="origem" onchange="converterArea()">
+        <option value="selecione">Selecione</option>
+        <option value="alqueire(s)">Alqueire(s)</option>
+        <option value="hectare(s)">Hectare(s)</option>
+        <option value="litro(s)">Litro(s)</option>
+        <option value="m2">Metro(s) Quadrado(s)(m²)</option>
+        <option value="quarta(s)">Quarta(s)</option>
+
+      </select>
+
+      <label for="destino">Selecione a unidade de destino:</label>
+      <select id="destino" onchange="converterArea()">
+        <option value="selecione">Selecione</option>
+        <option value="alqueire(s)">Alqueire(s)</option>
+        <option value="hectare(s)">Hectare(s)</option>
+        <option value="m2">Metro(s) Quadrado(s) (m²)</option>
+      </select>
+
+      <button onclick="converterArea()">Converter</button>
+      <div class="resultado">
+        <p>Resultado:</p>
+      </div>
+      <div class="result" id="resultado"></div>
+
+      <div class="footer">
+        <img src="./img/logo.png" alt="Meu Logotipo" class="logo">
+      </div>
+
+    </div>
+
+    <!-- Container regra de três-->
+    <div class="container">
+      <h1>Regra de Três</h1>
+      <div class="linha">
+        <input type="number" id="a" placeholder="A">
+        <span class="texto2">ESTÁ PARA</span>
+        <input type="number" id="b" placeholder="B">
+      </div>
+      <div class="linha">
+        <span class="texto2" id="assimcomo">ASSIM COMO</span>
+      </div>
+      <div class="linha">
+        <input type="number" id="c" placeholder="C">
+        <span class="texto2">ESTÁ PARA</span>
+        <span id="resultadoregra">X</span>
+      </div>
+      <br><br>
+      <button onclick="calcularregra()">Calcular</button>
+
+      <div class="footer">
+        <img src="./img/logo.png" alt="Meu Logotipo" class="logo">
+      </div>
+
+    </div>
+
+    <!-- Container fração-->
+    <div class="container">
+      <h1>Cálculo de Fração de Área</h1>
+
+      <label for="areaTotal">Área Total do Imóvel (m² ou ha):</label>
+      <input type="number" id="areaTotal" placeholder="Digite a área total">
+
+      <label>Área da Fração (m² ou ha):</label>
+      <div class="fraction-input">
+        <input type="number" id="numerador" placeholder="Numerador">
+        <hr style="width: 100%; border: 2px solid black;">
+        <br>
+        <input type="number" id="denominador" placeholder="Denominador">
+      </div>
+       
+      <button onclick="calcularFracao()">Calcular</button>
+      <div class="resultado">
+        <p>Resultado:</p>
+      </div>
+      <p class="result" id="resultadofracao"></p>
+
+      <div class="footer">
+        <img src="./img/logo.png" alt="Meu Logotipo" class="logo">
+      </div>
+    </div>
+
+
+  </div>
+  <script src="./js/script.js"></script>
+</body>
+
+</html>
